@@ -8,6 +8,13 @@
 
 #define BIND_PORT 12345
 
+enum dataType{
+
+    textType = 0,
+    dateTimeType  = 1,
+
+};
+
 class UDPworker : public QObject
 {
     Q_OBJECT
@@ -15,7 +22,7 @@ public:
     explicit UDPworker(QObject *parent = nullptr);
     void InitSocket( void );
     void ReadDatagram( QNetworkDatagram datagram);
-    void SendDatagram(QByteArray data );
+    void SendDatagram(QByteArray data, int dataType);
 
 
 private slots:
@@ -23,6 +30,7 @@ private slots:
 
 private:
     QUdpSocket* serviceUdpSocket;
+    int _dataType = textType;
 
 signals:
     void sig_sendTimeToGUI(QDateTime data);

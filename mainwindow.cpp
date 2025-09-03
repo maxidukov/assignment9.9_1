@@ -24,7 +24,7 @@ MainWindow::MainWindow(QWidget *parent)
 
         outStr << dateTime;
 
-        udpWorker->SendDatagram(dataToSend);
+        udpWorker->SendDatagram(dataToSend, dateTimeType);
     });
 
 }
@@ -63,7 +63,7 @@ void MainWindow::on_pb_sendDG_clicked()
 
     outStr << textToSend;
 
-    udpWorker->SendDatagram(dataToSend);
+    udpWorker->SendDatagram(dataToSend, textType);
 }
 
 void MainWindow::DisplayText(QString text)
