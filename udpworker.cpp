@@ -28,7 +28,7 @@ void UDPworker::InitSocket()
 /*!
  * @brief Метод осуществляет обработку принятой датаграммы
  */
-void UDPworker::ReadDatagram(QNetworkDatagram datagram) //ONE FOR BOTH CASES DIDN'T WORK
+void UDPworker::ReadDatagram(QNetworkDatagram datagram)
 {
 
     QByteArray data;
